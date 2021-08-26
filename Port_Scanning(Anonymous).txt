@@ -1,0 +1,67 @@
+===================================================
+ Anonymous Port Scanning: Nmap + Tor + ProxyChains-ng
+ By: xG//05t 
+ Purpose: Fun & Research
+ NOTES: 
+ This guide demonstrates a scanning technique using Nmap through the TOR network. 
+ It prevents the source IP from being disclosed to the target.
+ All standard default ports are used. However, the ports can be changed via config files to suit needs.
+ The target used for this guide is scanme.nmap.org
+===================================================
+# TOR Browser Ports: 9150/9151
+# ProxyChains/TOR Service Port: 9050
+-----------------------------------------------------
+#//INSTALL Packages/Binaries\\
+#Debian
+sudo apt update; sudo apt install tor nmap proxychains-ng
+#RedHat
+sudo dnf check-update; sudo dnf update; dnf install tor nmap proxychains-ng
+#Arch
+sudo pacman -Syyu; sudo pacman -S tor nmap proxychains-ng
+
+-----------------------------------------------------
+#//SET-UP Config Files\\
+## The sed commands below specifies SOCKS version 5 vs version 4 (Can be left default)
+## This config file is also where to change the default if needed
+
+## Config file for standard proxychains (
+sudo sed -i 's/socks4..127/socks5 127/' /etc/proxychains.conf
+## Config file for proxychains4
+sudo sed -i 's/socks4..127/socks5 127/' /etc/proxychains4.conf
+
+-----------------------------------------------------
+#//START TOR Service\\
+##SysV Init system (Older Method)
+sudo services tor start
+sudo services tor status
+----------------------------------
+##Systemd system (Newer Method)
+sudo systemctl start tor
+sudo systemctl status tor
+
+-----------------------------------------------------
+#//Check that localhost is listening on specified Tor Port\\
+##Example: 127.0.0.1:9050	0.0.0.0:*	LISTEN
+sudo netstat -antop | grep -i tor
+
+
+===================================================
+ THE COMMAND
+ Notes:
+ If settings are correct, it is time to execute.
+===================================================
+
+sudo proxychains4 nmap -sT -Pn scanme.nmap.org 2>/dev/null
+
+# BONUS: To ensure that the IP address won't be disclosed to the target
+sudo iptables -A OUTPUT --dest scanme.nmap.org -j DROP
+
+
+===============
+ EXTRA
+ Not needed to for above
+ Anonymous DNS resolution tool vs dig or nslookup. 
+===============
+# To prevent DNS leaks, use tor-resolve command to resolve a hostname to an IP address
+## Example
+tor-resolve scanme.nmap.org
