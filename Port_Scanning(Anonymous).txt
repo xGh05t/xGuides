@@ -1,0 +1,36 @@
+===================================================
+ Anonymous Port Scanning: Nmap + Tor + ProxyChains
+ By: G//05t 
+ Purpose: Fun & Research
+===================================================
+# TOR Browser Ports: 9150/9151
+# ProxyChains/TOR Service Port: 9050
+
+#//INSTALL Binaries\\
+sudo apt install tor nmap proxychains4
+
+#//SET-UP Config Files\\
+sudo sed -i 's/socks4..127/socks5 127/' /etc/proxychains4.conf
+
+#//START Services\\
+SysV Init: sudo services tor start
+SysV Init: sudo services tor status
+----------------------------------
+Systemd: sudo systemctl start tor
+Systemd: sudo systemctl status tor
+
+===================================================
+ THE COMMAND
+===================================================
+
+proxychains4 nmap -sT -Pn scanme.nmap.org 2>/dev/null
+
+# BONUS: To ensure that the IP address won't be disclosed to the target
+sudo iptables -A OUTPUT --dest <TARGET> -j DROP
+
+
+===============
+	EXTRA
+===============
+# To prevent DNS leaks, use tor-resolve command to resolve a hostname to an IP address
+tor-resolve scanme.nmap.org
