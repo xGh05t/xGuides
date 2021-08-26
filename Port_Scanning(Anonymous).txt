@@ -21,12 +21,10 @@ sudo pacman -Syyu; sudo pacman -S tor nmap proxychains-ng
 
 -----------------------------------------------------
 #//SET-UP Config Files\\
-## The sed commands below specifies SOCKS version 5 vs version 4 (Can be left default)
-## This config file is also where to change the default if needed
+## The sed commands below specifies SOCKS version 5 vs version 4 (Default)
+## This config file is also where to change the default port if needed
 
-## Config file for standard proxychains (
-sudo sed -i 's/socks4..127/socks5 127/' /etc/proxychains.conf
-## Config file for proxychains4
+## Config file for proxychains-ng
 sudo sed -i 's/socks4..127/socks5 127/' /etc/proxychains4.conf
 
 -----------------------------------------------------
