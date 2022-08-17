@@ -12,7 +12,7 @@ fi
 
 # if argument was given, identify the DNS servers for the domain
 
-for server in $(host -t ns $1 | cut -d " " -f4); do
+for server in $(host -t ns $1 | cut -d ' ' -f4); do
   # For each of these servers, attempt a zone transfer
-  host -l $1 $server |grep "has address"
+  host -l $1 $server | egrep 'has address'
 done
