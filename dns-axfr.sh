@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#By: xG//05t 
+#Purpose: Fun & Research
 
 # Simple Zone Transfer Bash Script
 # $1 is the first argument given after the bash script
