@@ -13,16 +13,16 @@ ns_servers = []
 def dns_zone_xfer(address):
     ns_answer = dns.resolver.resolve(address, 'NS')
     for server in ns_answer:
-        print("[*] Found NS: {}".format(server))
+        print(f'[*] Found NS: {server}')
         ip_answer = dns.resolver.resolve(server.target, 'A')
         for ip in ip_answer:
-            print("[*] IP for {} is {}".format(server, ip))
+            print(f'[*] IP for {server} is {ip}')
             try:
                 zone = dns.zone.from_xfr(dns.query.xfr(str(ip), address))
                 for host in zone:
-                    print("[*] Found Host: {}".format(host))
+                    print(f'[*] Found Host: {host}')
             except Exception as e:
-                print("[*] NS {} refused zone transfer!".format(server))
+                print(f'[*] NS {server} refused zone transfer!\n')
                 continue
 
 if __name__ == "__main__":
