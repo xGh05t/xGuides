@@ -1,6 +1,8 @@
 rem Creates a Wget VBS Script 
 rem By: xG//05t 
-rem Creates a Wget VBS Script 
+rem Purpose: Fun/Research 
+rem Usage: 
+rem .\cscript wget.vbs http://IPAddress/RemoteFileName LocalFileName 
 strUrl = WScript.Arguments.Item(0) 
 StrFile = WScript.Arguments.Item(1) 
 Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 
