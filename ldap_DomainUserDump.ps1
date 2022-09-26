@@ -17,6 +17,7 @@ $objDomain = New-Object System.DirectoryServices.DirectoryEntry
 $Searcher.SearchRoot = $objDomain
 
 $Searcher.filter="samAccountType=805306368"
+#$Searcher.filter="name=Jeff_Admin"
 
 $Searcher.FindAll()
 
