@@ -17,10 +17,14 @@ $objDomain = New-Object System.DirectoryServices.DirectoryEntry
 $Searcher.SearchRoot = $objDomain
 
 $Searcher.filter="(objectClass=Group)"
+#$Searcher.filter="(name=Secret_Group)"
+#$Searcher.filter="(name=Nested_Group)"
+#$Searcher.filter="(name=Another_Nested_Group)"
 
 $Result = $Searcher.FindAll()
 
 Foreach($obj in $Result)
 {
     $obj.Properties.name
+    #$obj.Properties.member
 }
