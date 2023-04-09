@@ -52,7 +52,7 @@ sudo netstat -antp | grep -i tor
  If settings are correct, execute.
 ===================================================
 
-sudo proxychains4 -q nmap -Pn -sT scanme.nmap.org
+sudo proxychains4 nmap -sT -Pn scanme.nmap.org 2>/dev/null
 
 # BONUS: To ensure that the IP address won't be disclosed to the target
 sudo iptables -A OUTPUT --dest scanme.nmap.org -j DROP

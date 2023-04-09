@@ -1,4 +1,4 @@
-#To use PowerShell Sessions
+# To use PowerShell Sessions
 
 # First: Create Session
 $dcsesh = New-PSSession -Computer SANDBOXDC
@@ -7,5 +7,5 @@ $dcsesh = New-PSSession -Computer SANDBOXDC
 Invoke-Command -Session $dcsesh -ScriptBlock {ipconfig}
 Copy-Item "C:\Users\Public\whoami.exe" -Destination "C:\Users\Public\" -ToSession $dcsesh
 
-##Call evil binaries
+## Call evil binaries
 Invoke-Command -Session $dcsesh -ScriptBlock {C:\Users\Public\whoami.exe}
