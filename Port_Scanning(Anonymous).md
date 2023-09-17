@@ -46,8 +46,8 @@ sudo systemctl status tor
 sudo netstat -antp | grep -i tor
 
 ===================================================
- THE COMMAND
- Notes:
+## THE COMMAND
+### Notes:
 -sT : TCP Full Connect
 -Pn : Treat all hosts as online -- skip host discovery
  If settings are correct, execute.
@@ -62,10 +62,10 @@ sudo iptables -A OUTPUT --dest scanme.nmap.org -j DROP
 sudo iptables -nvL
 
 **********************
- EXTRA
+ ## EXTRA
  Not needed to for execution
  Anonymous DNS resolution tool vs dig or nslookup. 
 **********************
-# To prevent DNS leaks, use tor-resolve command to resolve a hostname to an IP address
-## Example
+## To prevent DNS leaks, use tor-resolve command to resolve a hostname to an IP address
+### Example
 tor-resolve scanme.nmap.org
