@@ -1,5 +1,3 @@
-===================================================
-
 # Anonymous Port Scanning: Nmap + Tor + ProxyChains-ng
 By: xG//05t <br>
 Purpose: Fun & Research <br>
