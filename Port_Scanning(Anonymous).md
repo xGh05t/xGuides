@@ -1,17 +1,17 @@
 ===================================================
 
- Anonymous Port Scanning: Nmap + Tor + ProxyChains-ng
- By: xG//05t 
- Purpose: Fun & Research
- NOTES: 
- This guide demonstrates a scanning technique using Nmap through the TOR network via Proxychains. 
- It prevents the source IP from being disclosed to the target.
- All standard default ports are used. However, the ports can be changed via config files to suit needs.
- The example target used for this guide is scanme.nmap.org
+# Anonymous Port Scanning: Nmap + Tor + ProxyChains-ng
+By: xG//05t <br>
+Purpose: Fun & Research <br>
+NOTES: <br>
+This guide demonstrates a scanning technique using Nmap through the TOR network via Proxychains. <br>
+It prevents the source IP from being disclosed to the target. <br>
+All standard default ports are used. However, the ports can be changed via config files to suit needs. <br>
+The example target used for this guide is scanme.nmap.org <br>
 
 ===================================================
-# TOR Browser Ports: 9150/9151
-# ProxyChains/TOR Service Port: 9050
+## TOR Browser Ports: 9150/9151
+## ProxyChains/TOR Service Port: 9050
 -----------------------------------------------------
 ## //INSTALL Packages/Binaries\\
 ### Debian
