@@ -29,7 +29,7 @@ ssh -MS /tmp/TARGET1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
 
 ### SocketFile Usage
 ```sh
-ssh -S <socket.file> .                           (or user@ip if . does not work)
+ssh -S <socket.file> .     (or user@ip if . does not work)
 ```
 
 ### How to use SecureCopy with Socket.File
